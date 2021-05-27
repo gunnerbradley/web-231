@@ -1,2 +1,5 @@
-# web-231
-repository for Bellevue Web-231
+# WEB 231 Enterprise JavaScript I
+---
+## Contributors
+* Mark Seymour
+* Gunner Bradley
