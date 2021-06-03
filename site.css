@@ -1,7 +1,4 @@
-/* Landing Page */
-#container {
-    margin: 50px 100px auto 100px;
-}
+/* classes: used on Landing Page, Payroll Page, and Exercise 2.2*/
 .title-styling{
     font-family: 'Oswald', sans-serif;
     background-color: #3C275A;
@@ -9,22 +6,23 @@
     border: 1px solid #D6A800;
     padding: 10px;
 }
-.landing-text{
+
+.text-styles{
     font-family: 'Oswald', sans-serif;
 }
-.landing-link{
+
+.link-styles{
     color: #453674;
     font-family: 'Oswald', sans-serif;
 }
-.landing-link:hover {
+.link-styles:hover {
     background-color: #D6A800;
     color: #4F3674; 
 }
-.landing-link:visited{
+.link-styles:visited{
     color: #3C275A;
 }
 
-/* Excercise 2.2 - Hello JavaScript */
 .return-home{
     color: #4F3674;
     text-decoration: none;
@@ -34,4 +32,14 @@
 }
 .return-home:visited{
     color: #3C275A;
+}
+
+/* Landing Page Only Styles*/
+#container {
+    margin: 50px 100px auto 100px;
+}
+
+/* Payroll Page Only Styles*/
+.list-styles{
+    border: 1px dotted red;
 }

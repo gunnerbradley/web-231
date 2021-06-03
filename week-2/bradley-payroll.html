@@ -1,0 +1,79 @@
+<!-- 
+============================================
+; Title:  Assignment 2.2 – Values and Variables
+; Author: Gunner Bradley
+; Date:   03 June 2021
+; Description: Displays Payroll Data
+;=========================================== 
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WEB 231 – Enterprise JavaScript I</title>
+    <!-- styles -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="bradley-payroll.css">
+    <link rel="stylesheet" href="../site.css">
+</head>
+<body>
+    <h1 id="payroll-header" class="title-styling">Payroll System</h1>
+    <h3 class="title-styling">Employee Record 1</h3>
+    <ul class="list-styles">
+        <li id="txtFirstNameLudwig" class="text-styles"></li>
+        <li id="txtLastNameBeethoven" class="text-styles"></li>
+        <li id="txtAddressLudwig" class="text-styles"></li>
+        <li id="txtHireDateLudwig" class="text-styles"></li>
+        <li id="txtPayRateLudwig" class="text-styles"></li>
+    </ul>
+    <h3 class="title-styling">Employee Record 2</h3>
+    <ul class="list-styles">
+        <li id="txtFirstNameJohann" class="text-styles"></li>
+        <li id="txtLastNameBach" class="text-styles"></li>
+        <li id="txtAddressJohann" class="text-styles"></li>
+        <li id="txtHireDateJohann" class="text-styles"></li>
+        <li id="txtPayRateJohann" class="text-styles"></li>
+    </ul>
+    <h3 class="title-styling">Employee Record 3</h3>
+    <ul class="list-styles">
+        <li id="txtFirstNameWolfgang" class="text-styles"></li>
+        <li id="txtLastNameMozart" class="text-styles"></li>
+        <li id="txtAddressWolfgang" class="text-styles"></li>
+        <li id="txtHireDateWolfgang" class="text-styles"></li>
+        <li id="txtPayRateWolfgang" class="text-styles"></li>
+    </ul>
+    <a href="../index.html" class="return-home text-styles">Return Home</a>
+
+    <script>
+    /*============================================
+    ; Title:  Assignment 2.2 – Values and Variables
+    ; Author: Gunner Bradley
+    ; Date:   03 June 2021
+    ; Description: Displays Payroll Data
+    ;===========================================*/
+        // Lugwig 
+        const txtFirstNameLudwig = document.getElementById("txtFirstNameLudwig").innerHTML = "Ludwig"; 
+        const txtLastNameBeethoven = document.getElementById("txtLastNameBeethoven").innerHTML = "Beethoven";
+        const txtAddressLudwig = document.getElementById("txtAddressLudwig").innerHTML = "505 Main Street"; 
+        const txtHireDateLudwig = document.getElementById("txtHireDateLudwig").innerHTML = new Date('2020-12-10').toLocaleDateString("en-US");
+        const txtPayRateLudwig = document.getElementById("txtPayRateLudwig").innerHTML = 18.9.toFixed(1);
+
+        // Johann
+        const txtFirstNameJohann = document.getElementById("txtFirstNameJohann").innerHTML= "Johann"; 
+        const txtLastNameBach = document.getElementById("txtLastNameBach").innerHTML = "Bach";
+        const txtAddressJohann = document.getElementById("txtAddressJohann").innerHTML = "600 Main Street"; 
+        const txtHireDateJohann = document.getElementById("txtHireDateJohann").innerHTML = new Date('2020-12-10').toLocaleDateString("en-US");
+        const txtPayRateJohann = document.getElementById("txtPayRateJohann").innerHTML = 25.5.toFixed(1);
+
+        //Wolfgang
+        const txtFirstNameWolfgang = document.getElementById("txtFirstNameWolfgang").innerHTML = "Wolfgang"; 
+        const txtLastNameMozart = document.getElementById("txtLastNameMozart").innerHTML = "Mozart";
+        const txtAddressWolfgang = document.getElementById("txtAddressWolfgang").innerHTML = "600 Main Street"; 
+        const txtHireDateWolfgang = document.getElementById("txtHireDateWolfgang").innerHTML = new Date('2020-12-10').toLocaleDateString("en-US");
+        const txtPayRateWolfgang = document.getElementById("txtPayRateWolfgang").innerHTML = 50.1.toFixed(1);
+    </script>
+</body>
+</html>
