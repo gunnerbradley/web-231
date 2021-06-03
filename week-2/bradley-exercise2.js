@@ -2,8 +2,8 @@
 ============================================
 ; Title:  bradley-exercise2.js
 ; Author: Gunner Bradley
-; Date:   06 June 2021
-; Description: Displays message to the alert window, and display world text in p-tag. 
+; Date:   03 June 2021
+; Description: Displays message to the alert window, and adds text to p-tag. 
 ;===========================================
 */
 
