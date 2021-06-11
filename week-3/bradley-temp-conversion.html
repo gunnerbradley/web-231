@@ -1,0 +1,52 @@
+<!-- 
+============================================
+; Title:  bradley-temp-conversion.html
+; Author: Gunner Bradley
+; Date:   10 June 2021
+; Description: Converts Fahrenheit to Celsius 
+;=========================================== 
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WEB 231 – Enterprise JavaScript I</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./bradley-temp-conversion.css">
+</head>
+<body>
+    <div id="container">
+        <h1 class="app-header">Welcome to the Temperature Conversion App!</h1>
+        <div class="card">
+            <p class="card-title">Fahrenheit to Celsius Converter</p>
+            <form>
+                <label for="txtFahrenheit" id="txtFahrenheitLabel">Fahrenheit value:</label>
+                <input type="text" name="txtFahrenheit" id="txtFahrenheit">
+                <br>
+                <button type="button" id="buttonFahrenheit">Convert Temperature</button>
+            </form>
+        </div>
+        <div class="card">
+            <p class="card-title">Conversion Results</p>
+            <div id="card-content"></div>
+        </div>
+        <a href="../index.html" class="return-home text-styles">Return</a>
+    </div>
+
+
+<script>
+    function convertFahrenheit (){
+        let fahrenheit = document.getElementById('txtFahrenheit').value; //get input value
+
+        document.getElementById('card-content').innerHTML = ((parseFloat(fahrenheit) - 32) / 1.8).toFixed(2); //displays converted value
+        
+        document.getElementById('txtFahrenheit').value = ""; //clears input after button click
+    }
+
+   document.getElementById('buttonFahrenheit').onclick = convertFahrenheit;
+</script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+#container{
+    margin: auto;
+    font-family: 'Oswald', sans-serif;
+    font-size: 28px;
+    font-weight: 400;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.app-header{
+    font-family: 'Oswald', sans-serif;
+    font-size: 28px;
+    font-weight: 400;
+}
+
+.card{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    padding: 25px;
+    margin-bottom: 40px;
+    border-radius: 5px;
+    box-shadow: 5px 5px 10px rgba( 0, 0, 0, 0.25);
+    
+}
+.card-title{
+    margin: auto;
+    text-align: center;
+    color: #453674;
+    
+}
+#card-content{ 
+    text-align: center;
+}
+
+#txtFahrenheitLabel{
+    font-size: 15px;
+    width: 10%;    
+}
+
+#txtFahrenheit{
+    padding: 10px;
+}
+
+#buttonFahrenheit{
+    width: 40%;
+    margin-top: 30px;
+    padding: 15px;
+    background-color: #453674;
+    color: white;
+    border-radius: 5px;
+}
+
+
+.return-home{
+    display: block;
+    color: #4F3674;
+    text-decoration: none;
+    font-size: 18px;
+    text-align: left;
+}
+.return-home:hover{
+    background-color: #D6A800;
+}
+.return-home:visited{
+    color: #3C275A;
+}
