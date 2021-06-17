@@ -1,0 +1,66 @@
+<!-- 
+============================================
+; Title:  bradley-number-game.html
+; Author: Gunner Bradley
+; Date:   17 June 2021
+; Description: C 
+;=========================================== 
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WEB 231 – Enterprise JavaScript I</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./bradley-number-game.css">
+</head>
+<body>
+    <div id="container">
+        <h1>Welcome to the Number Game!</h1>
+        <div class="card">
+            <p class="card-title">Pick a number between 1 and 10</p>
+            <div class="card-body">
+                <form>
+                    <label for="txtMyNumber" class="card-text">Guess the Number:</label>
+                    <input type="text" name="txtMyNumber" id="txtMyNumber" autocomplete="off">
+                    <br>
+                    <button type="submit" id="btnSubmit">Submit</button>
+                </form>
+            </div>
+        </div>
+        <div class="card">
+            <p class="card-title">Results</p>
+            <p id="answer"></p>
+        </div>
+
+
+        <a href="../index.html" class="return-home text-styles">Return</a>
+    </div>
+
+
+<script>
+    const rdn = Math.floor((Math.random() * 10) + 1); //random number between 1and 10
+
+     function checkGuess() {
+
+        let myNumber = document.getElementById('txtMyNumber').value; //gets input value
+
+         if (rdn < myNumber){
+            document.getElementById('answer').innerHTML = `The number is less than ${myNumber}`;
+         } else if (rdn > myNumber){
+            document.getElementById('answer').innerHTML = `The number is greater than ${myNumber}`;
+         } else if (rdn == myNumber){
+            document.getElementById('answer').innerHTML = `Congratulations! You picked the correct number!`;
+         }
+    }
+
+    document.getElementById('btnSubmit').addEventListener('click', (e) => {
+        e.preventDefault();
+        checkGuess();
+    });
+</script>
+</body>
+</html>
