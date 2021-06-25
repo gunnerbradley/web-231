@@ -19,7 +19,7 @@
 </head>
 <body>
     <div id="container">
-        <h1>Welcome to the Number Game!</h1>
+        <h1 class="app-title">Welcome to the Number Game!</h1>
         <div class="card">
             <p class="card-title">Pick a number between 1 and 10</p>
             <div class="card-body">
@@ -45,10 +45,9 @@
     const rdn = Math.floor((Math.random() * 10) + 1); //random number between 1and 10
 
      function checkGuess() {
-
         let myNumber = document.getElementById('txtMyNumber').value; //gets input value
-
-         if (rdn < myNumber){
+       
+         if (rdn < myNumber){ //check guess
             document.getElementById('answer').innerHTML = `The number is less than ${myNumber}`;
          } else if (rdn > myNumber){
             document.getElementById('answer').innerHTML = `The number is greater than ${myNumber}`;
@@ -58,8 +57,8 @@
     }
 
     document.getElementById('btnSubmit').addEventListener('click', (e) => {
-        e.preventDefault();
-        checkGuess();
+        e.preventDefault(); //keeps page from refreshing on click
+        checkGuess(); //runs function on guess
     });
 </script>
 </body>

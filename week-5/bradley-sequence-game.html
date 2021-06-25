@@ -1,0 +1,99 @@
+<!-- 
+============================================
+; Title:  bradley-sequnece-game.html
+; Author: Gunner Bradley
+; Date:   24 June 2021
+; Description: *
+;=========================================== 
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WEB 231 – Enterprise JavaScript I</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./bradley-sequence-game.css">
+</head>
+<body>
+    <div id="container">
+        <h1 class="title">Welcome to the Sequence Game!</h1>
+        <div class="card">
+            <p class="card-title">Sequence Selection Form</p>
+            <div class="card-body">
+                <form>
+                    <label for="sequence" class="card-text">Guess the Number:</label>
+                    <select name="sequence" id="sequence" class="drop-down-menu"autocomplete="off">
+                        <option value="select">--Select--</option>
+                        <option value="fibonacci">Fibonacci Sequence</option>                      >Saab 95</option>
+                        <option value="even">Even Numbers</option>
+                        <option value="odd">Odd Numbers</option>
+                      </select>
+                    <br>
+                    <button type="button" id="btnDisplaySequence">Display Sequence</button>
+                </form>
+            </div>
+        </div>
+        <div class="card">
+            <p class="card-title">Sequence Results</p>
+            <p id="displaySequence"></p>
+        </div>
+
+
+        <a href="../index.html" class="return-home text-styles">Return</a>
+    </div>
+
+
+<script>
+
+    let num1 = 0, num2 = 1, next, fibonacciSequenceText="";
+ 
+     function displaySequence() {
+        
+        let sequence = document.getElementById('sequence').value; //gets input value
+        let choice = document.getElementById('displaySequence');
+    
+        if (sequence == "fibonacci") {
+            while (num1 <= 40) {
+                fibonacciSequenceText += num1 + ", ";
+                next = num1 + num2;
+                num1 = num2;
+                num2 = next;
+    
+            }
+            choice.innerHTML = fibonacciSequenceText.slice(0, -2);
+        } 
+        else if(sequence == "even"){
+            let evens = "";
+            do {
+                if (num1 % 2 == 0){
+                    evens += num1 + ", ";
+                    num1++
+                    choice.innerHTML = evens;
+                } else(num1++)
+            } while (num1 < 20);
+        }
+        else if (sequence == "odd"){
+            let odds = "";
+            for (let i = 0; i<20; i++){
+                if (i % 2 !== 0) {
+                    odds += i + ", ";
+                    choice.innerHTML = odds;
+                }
+            }
+        }
+        else if(sequence == "select"){
+           alert("Invalid selection, please try again!");
+        }
+         
+    }
+
+    document.getElementById('btnDisplaySequence').addEventListener('click', (e) => {
+        e.preventDefault();
+        displaySequence();
+    });
+</script>
+</body>
+</html>

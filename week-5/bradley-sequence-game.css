@@ -8,12 +8,10 @@
     align-items: center;
     flex-direction: column;
 }
-.app-title{
-    font-family: 'Oswald', sans-serif;
-    font-size: 28px;
-    font-weight: 400;
+.title{
+    font-size: 35px;
+    font-weight: 500;
 }
-
 .card{
     display: flex;
     flex-direction: column;
@@ -37,17 +35,21 @@
     font-size: 16px;
 }
 
-#txtMyNumber{
+#sequence{
     padding: 7.5px;
     border: 2px solid rgba( 0, 0, 0, 0.1);
     border-radius: 4px;
 }
-#btnSubmit{
+#btnDisplaySequence{
     width: 100%;
     margin-top: 30px;
     padding: 10px;
     background-color: #453674;
     color: white;
+}
+.displaySequence {
+    text-align: center;
+    margin: auto;
 }
 
 
