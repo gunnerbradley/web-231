@@ -1,0 +1,182 @@
+<!-- 
+============================================
+; Title:  bradley-in-n-out-books.html
+; Author: Gunner Bradley
+; Date:   1 July 2021
+; Description: *
+;=========================================== 
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WEB 231 – Enterprise JavaScript I</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./bradley-in-n-out-books.css">
+</head>
+<body>
+    <div id="container">
+        <h1 class="title">Welcome to In-N-Out-Books</h1>
+        <div class="card">
+            <p class="card-title">My Favorites</p>
+            <div class="card-body">
+                <form>
+                    <label for="choice" class="card-text">Choose a Listing:</label>
+                    <select name="choice" id="choice" class="drop-down-menu" autocomplete="off">
+                        <option value="select">--Select--</option>
+                        <option value="books">Top 3 Favorite Books</option>
+                        <option value="authors">Top 3 Favorite Authors</option>
+                    </select>
+                    <br>
+                    <button type="button" id="btnDisplayListing">Display Sequence</button>
+                </form>
+            </div>
+        </div>
+        <!-- BOOKS -->
+            <div class="card" id="topBooks" style="display: none;">
+                <p class="card-title">Top 3 Favorite Books</p>
+                <table class="card-table">
+                    <tr class="card-table-row">
+                            <th class="card-table-header">ISBN</th>
+                            <th class="card-table-header">Title</th>
+                            <th class="card-table-header">Pages</th>
+                        </tr>
+                        <tr class="card-table-row">
+                            <td id="isbnOne" class="card-table-data"></td>
+                            <td id="titleOne" class="card-table-data"></td>
+                            <td id="pagesOne" class="card-table-data"></td>
+                        </tr>
+                        <tr class="card-table-row">
+                            <td id="isbnTwo" class="card-table-data"></td>
+                            <td id="titleTwo" class="card-table-data"></td>
+                            <td id="pagesTwo" class="card-table-data"></td>
+                        </tr>
+                        <tr class="card-table-row">
+                            <td id="isbnThree" class="card-table-data"></td>
+                            <td id="titleThree" class="card-table-data"></td>
+                            <td id="pagesThree" class="card-table-data"></td>
+                        </tr>
+                </table>
+            </div>
+            <!-- AUTHORS -->
+            <div class="card" id="topAuthors" style="display: none;">
+                <p class="card-title">Top 3 Favorite Author</p>
+                <table class="card-table">
+                    <tr>
+                        <th class="card-table-header">Name</th>
+                        <th class="card-table-header">Genre</th>
+                    </tr>
+                        <tr class="card-table-row">
+                        <td id="nameOne" class="card-table-data"></td>
+                        <td id="genreOne" class="card-table-data"></td>
+                    </tr>
+                    <tr class="card-table-row">
+                        <td id="nameTwo" class="card-table-data"></td>
+                        <td id="genreTwo" class="card-table-data"></td>
+                    </tr class="card-table-row">
+                    <tr class="card-table-row">
+                        <td id="nameThree" class="card-table-data"></td>
+                        <td id="genreThree" class="card-table-data"></td>
+                    </tr>    
+                </table>
+            </div>
+            
+       
+
+
+        <a href="../index.html" class="return-home text-styles">Return</a>
+    </div>
+
+
+<script>
+    const topBooks = {
+        bookOne: {
+            isbn: "9780141199078",
+            title: "Pride and Prejudice ",
+            pages: "416"
+        },
+        bookTwo: {
+            isbn: "9781784752637",
+            title: "To Kill A Mockingbird",
+            pages: "320"
+        },
+        bookThree: {
+            isbn: "9780141182636",
+            title: "The Great Gatsby",
+            pages: "240"
+        },
+    }
+    const topAuthors = {
+        authorOne: {
+            name: "Jane Austen",
+            genre: "Comedies of Manners"
+        },
+        authorTwo: {
+            name: "Harper Lee",
+            genre: "Southern Gothic"
+        },
+        authorThree: {
+            name: "F. Scott Fitzgerald",
+            genre: "Historical Fiction, Tragedy"
+        },
+    };
+// TABLE BINDINGS
+    // BOOKS
+        //BOOK ONE
+        document.getElementById('isbnOne').innerHTML = topBooks.bookOne.isbn;
+        document.getElementById('titleOne').innerHTML = topBooks.bookOne.title;
+        document.getElementById('pagesOne').innerHTML = topBooks.bookOne.pages;
+
+        //BOOK TWO
+        document.getElementById('isbnTwo').innerHTML = topBooks.bookTwo.isbn;
+        document.getElementById('titleTwo').innerHTML = topBooks.bookTwo.title;
+        document.getElementById('pagesTwo').innerHTML = topBooks.bookTwo.pages;
+
+        //BOOK THREE
+        document.getElementById('isbnThree').innerHTML = topBooks.bookThree.isbn;
+        document.getElementById('titleThree').innerHTML = topBooks.bookThree.title;
+        document.getElementById('pagesThree').innerHTML = topBooks.bookThree.pages;
+
+    // Author
+        //AUTHOR ONE
+        document.getElementById('nameOne').innerHTML = topAuthors.authorOne.name;
+        document.getElementById('genreOne').innerHTML = topAuthors.authorOne.genre;
+
+        //AUTHOR TWO
+        document.getElementById('nameTwo').innerHTML = topAuthors.authorTwo.name;
+        document.getElementById('genreTwo').innerHTML = topAuthors.authorTwo.genre;
+
+        //AUTHOR ONE
+        document.getElementById('nameThree').innerHTML = topAuthors.authorThree.name;
+        document.getElementById('genreThree').innerHTML = topAuthors.authorThree.genre;
+       
+
+        // function to toggle table display of selection
+     function displayListing() {
+        let choice = document.getElementById('choice').value; //gets input value
+        let books = document.getElementById('topBooks'); // get topBooks card
+        let authors = document.getElementById('topAuthors'); // get topAuthors card
+        
+    
+        if ( choice == "books") {
+            books.style.display = "block";
+            authors.style.display = "none";
+                
+        } 
+        else if(choice == "authors"){
+            books.style.display = "none";
+            authors.style.display = "block";
+        }
+         
+    }
+
+    document.getElementById('btnDisplayListing').addEventListener('click', (e) => {
+        e.preventDefault();
+        displayListing();
+    });
+</script>
+</body>
+</html>
