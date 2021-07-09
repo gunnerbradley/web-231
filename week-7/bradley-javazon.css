@@ -1,0 +1,97 @@
+/*
+============================================
+; Title:  bradley-javazon.css
+; Author: Gunner Bradley
+; Date:   8 July 2021
+; Description: *
+;=========================================== 
+*/
+
+#container{
+    margin: auto;
+    font-family: 'Oswald', sans-serif;
+    font-size: 28px;
+    font-weight: 400;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.title{
+    font-size: 35px;
+    font-weight: 500;
+}
+.card{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    padding: 25px;
+    margin-bottom: 40px;
+    border-radius: 5px;
+    box-shadow: 5px 5px 10px rgba( 0, 0, 0, 0.25);
+    
+}
+.card-title{
+    margin: auto;
+    text-align: center;
+    color: #453674;
+    
+}
+.card-body{
+    width:66%
+}
+.card-text{
+    font-size: 16px;
+}
+
+.card-table{
+    border-collapse: collapse;
+    width: 100%;
+    margin-bottom: 30px;
+    font-size: 16px;
+    font-weight: 400;
+}
+.card-table-header{
+    margin: 12px auto;
+    padding: 5px;
+    text-align: left;
+    color: white;
+    background-color: #4F3674;
+    border: 1px solid #ddd
+}
+.card-table-data{
+    padding: 5px;
+    border: 1px solid #ddd
+}
+
+.card-table-row:hover{
+    color: #4F3674;
+    background-color: #D6A800;
+    cursor: pointer;
+}
+
+#btnDisplayListing{
+    width: 265px;
+    margin-top: 30px;
+    padding: 10px;
+    background-color: #453674;
+    color: white;
+    border-radius: 5px;
+}
+.drop-down-menu{
+    padding: 10px;
+}
+
+.return-home{
+    display: block;
+    color: #4F3674;
+    text-decoration: none;
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+.return-home:hover{
+    background-color: #D6A800;
+}
+.return-home:visited{
+    color: #3C275A;
+}
