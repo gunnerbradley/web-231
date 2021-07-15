@@ -1,0 +1,89 @@
+<!-- 
+============================================
+; Title:  bradley-alphabet-game.html
+; Author: Gunner Bradley
+; Date:   15 July 2021
+; Description: *
+;=========================================== 
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WEB 231 – Enterprise JavaScript I</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./bradley-alphabet-game.css">
+</head>
+<body>
+    <div id="container">
+        <h1 class="title">Welcome to Alphabet Game</h1>
+        <div class="card">
+            <p class="card-title">Alphabet Number Form</p>
+            <div class="card-body">
+                <label for="txtPosition" class="card-text">Choose a Listing:</label>
+                <input type="text" id="txtPosition">
+                <br>
+                <button type="button" id="btnFindLetter">Display Letter</button>
+                </form>
+            </div>
+        </div>
+        <a href="../index.html" class="return-home text-styles">Return</a>
+
+        <div class="card">
+            <p class="card-title">Letters in the Alphabet</p>
+            <p class="card-content" id="allLetters"></p>
+        </div>
+
+
+        <div class="card">
+            <p class="card-title">Results</p>
+            <p class="card-content" id="results"></p>
+        </div>
+
+
+
+    </div>
+
+
+<script>
+    const alphabet = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
+    let alphabetOutput ="";
+    
+// ASSIGN "LETTERS IN THE ALPHABET"
+    for (i=0; i < (alphabet.length -1); i++){ 
+            alphabetOutput += `${alphabet[i]}, `; //adds letters to alphabetOutput
+        };
+    alphabetOutput = alphabetOutput.slice(0, -2); //remove trailing comma
+    document.getElementById('allLetters').innerHTML = alphabetOutput; //add string to dom
+    
+
+// Handles letter position display
+    function displayLetters() {
+        let pos = document.getElementById("txtPosition").value; //get input value
+        let results = document.getElementById("results"); //results node
+        let letter = ""; //letter/position chosen
+
+       if( pos == undefined){
+            results.innerHTML = `There are not ${pos} letters in the alphabet`;
+        }
+        else if (pos <= (alphabet.length)){
+            letter += alphabet[pos - 1];
+
+            results.innerHTML = `${letter} is at position ${pos} in the alphabet`
+        } 
+        else if (pos > (alphabet.length)){
+          results.innerHTML = `There are not ${pos} letters in the alphabet`  
+        }
+    };
+    
+    // Click Event
+    document.getElementById('btnFindLetter').addEventListener('click', (e) => {
+        e.preventDefault();
+        displayLetters();
+    });
+    </script>
+    </body>
+    </html>
