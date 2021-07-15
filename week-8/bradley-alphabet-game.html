@@ -66,17 +66,21 @@
         let results = document.getElementById("results"); //results node
         let letter = ""; //letter/position chosen
 
-       if( pos == undefined){
+       if( pos > (alphabet.length)) {
             results.innerHTML = `There are not ${pos} letters in the alphabet`;
+            
         }
-        else if (pos <= (alphabet.length)){
+         else if (pos <= (alphabet.length)){
             letter += alphabet[pos - 1];
 
             results.innerHTML = `${letter} is at position ${pos} in the alphabet`
+            
         } 
-        else if (pos > (alphabet.length)){
-          results.innerHTML = `There are not ${pos} letters in the alphabet`  
+        else if( pos !== /\d+/g ) {
+            results.innerHTML = "Please enter a number";
+            
         }
+       pos.getElementById("txtPosition").value = ""; //reset value
     };
     
     // Click Event
