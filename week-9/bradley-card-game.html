@@ -1,0 +1,118 @@
+<!-- 
+============================================
+; Title:  bradley-card-game.html
+; Author: Gunner Bradley
+; Date:   22 July 2021
+; Description: *
+;=========================================== 
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WEB 231 – Enterprise JavaScript I</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@5.4.55/css/materialdesignicons.css">
+    <link rel="stylesheet" href="./bradley-card-game.css">    
+</head>
+<body>
+    <div id="container">
+        <h1 class="title">Welcome to The Card Game</h1>
+        <div class="card">
+            <p class="card-title">Card Dealer</p>
+            <div class="card-body">
+                    <button type="button" id="btnDealCards">Deal Cards</button>
+                </form>
+            </div>
+        </div>
+        <a href="../index.html" class="return-home text-styles">Return</a>
+        
+        <div id="" class="card">
+            <p class="card-title">Shuffled Cards </p>
+            <div id="player-card-container"></div>
+        </div>
+    </div>
+
+<script>
+    // INIT GLOBALS
+    let CARD_COUNT = 52;
+    let cards = [];
+    let faces = ["A","2","3","4","5","6","7","8","9","10","J","Q","K"];
+    let suits = ["Hearts", "Diamonds", "Clubs", "Spades"];
+
+    // CLASSES
+    class Card {
+        constructor(face, suit) {
+            this.face = face;
+            this.suit = suit;
+        }
+    }
+
+    class Dealer {
+        constructor() {
+            getDeckOfCards();
+        }   
+    }
+
+    function getDeckOfCards() {//LOADS CARDS INTO CARD ARR
+        for ( i = 0; i < CARD_COUNT; i++) {
+            cards[i] = new Card(faces[i % 13], suits[Math.floor(i / 13)])
+        }       
+    }
+
+    function shuffle() {//SHUFFLES CARDS ARR
+        for ( firstCard = 0; firstCard < CARD_COUNT; firstCard++) {
+            let secondCard = Math.floor(Math.random() * CARD_COUNT);
+            let tempCard = cards[firstCard]
+
+            cards[firstCard] = cards[secondCard];
+            cards[secondCard] = tempCard;
+        }
+    }
+
+    function buildPlayingCard(card, suitIcon, faceColor, suitColor) {//CREATES HTML CARDS
+        return ( 
+            `<div class="player-card">
+                <div style="text-align: left; font-size: 20px; padding-left: 10px; color:${faceColor}">${card.face}</div> 
+                <div style="font-size: 28px; padding-bottom: 25px;">
+                    <span class="${suitIcon}" style="color:${suitColor}"></span>
+                </div>    
+            </div>`
+        )
+    };
+
+    document.getElementById('btnDealCards').addEventListener('click', (e) => { //CLICK HANDLER
+        e.preventDefault();
+        let dealer = new Dealer();
+        let cardOutputWithIcon = "";
+        let playerCardContainer = document.getElementById("player-card-container");
+        shuffle();
+
+        for (let card of cards) {
+            switch(card.suit) {
+            case "Hearts":
+                cardOutputWithIcon += buildPlayingCard(card, "mdi mdi-heart", "red", "red");
+                break;
+            case "Diamonds":
+                cardOutputWithIcon += buildPlayingCard(card, "mdi mdi-cards-diamond", "red", "red");
+                break;
+            case "Clubs":
+                cardOutputWithIcon += buildPlayingCard(card, "mdi mdi-cards-club", "black", "black");
+                break;
+            case "Spades":
+                cardOutputWithIcon += buildPlayingCard(card, "mdi mdi-cards-spade", "black", "black");
+                break;
+            default:
+               
+            }
+        }
+        
+        playerCardContainer.insertAdjacentHTML('beforeend', cardOutputWithIcon)
+    });
+
+</script>
+</body>
+</html>

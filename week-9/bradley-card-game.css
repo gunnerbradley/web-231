@@ -1,0 +1,74 @@
+/*
+============================================
+; Title:  bradley-card-game.css
+; Author: Gunner Bradley
+; Date:   22 July 2021
+; Description: *
+;=========================================== 
+*/
+
+#container{
+    margin: auto;
+    font-family: 'Oswald', sans-serif;
+    font-size: 28px;
+    font-weight: 400;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.title{
+    font-size: 35px;
+    font-weight: 500;
+}
+.card{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    padding: 25px;
+    margin-bottom: 40px;
+    border-radius: 5px;
+    box-shadow: 5px 5px 10px rgba( 0, 0, 0, 0.25);
+}
+.card-title{
+    margin: auto;
+    text-align: center;
+    color: #453674;
+}
+.card-text{
+    font-size: 16px;
+}
+
+/* PLAYER CARD */
+.player-card{
+    text-align: center;
+    box-shadow: 0px 0px 10px rgba( 0, 0, 0, 0.25);
+}
+#player-card-container{
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-areas: "card card card card";
+    gap: 10px;
+    padding: 10px;
+}
+#btnDealCards{
+    width: 100%;
+    margin-top: 30px;
+    padding: 10px;
+    background-color: #453674;
+    color: white;
+}
+
+.return-home{
+    display: block;
+    color: #4F3674;
+    text-decoration: none;
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+.return-home:hover{
+    background-color: #D6A800;
+}
+.return-home:visited{
+    color: #3C275A;
+}

@@ -87,7 +87,23 @@
     document.getElementById('btnFindLetter').addEventListener('click', (e) => {
         e.preventDefault();
         displayLetters();
+
+
+
     });
+
+
+
+    let  itemsInCart = ["shampoo", "onions", "dog food", "super glue", "12-pack of soda"];
+
+    for (let i = 0; i < ( itemsInCart.length); i++) {
+        let itemsSelected = document.getElementById("results"); //where we'll display item list
+
+        itemsSelected.insertAdjacentHTML('beforeend', `<li class="item-styles">${itemsInCart[i]}</li>`);//add to the dom
+    };
+
+
+
     </script>
     </body>
     </html>
